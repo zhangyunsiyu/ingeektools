@@ -1,18 +1,20 @@
 {
   "pages": [
+    "pages/equipment/index",
+    
+    "pages/equipment/edit",
+    "pages/equipment/add",
+    "pages/loding/loding",
     "pages/index/index",
-    "pages/userConsole/userConsole",
-    "pages/storageConsole/storageConsole",
-    "pages/databaseGuide/databaseGuide",
-    "pages/addFunction/addFunction",
-    "pages/deployFunctions/deployFunctions",
-    "pages/chooseLib/chooseLib"
+    "pages/addUsers/addUsers",
+    "pages/register/register"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
-    "navigationBarTextStyle": "black"
+    "navigationBarTitleText": "银基工具",
+    "navigationBarTextStyle": "black",
+    "cloud": true
   }
 }

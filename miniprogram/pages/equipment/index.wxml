@@ -1,0 +1,57 @@
+<view>
+<!-- 标题 -->
+  <!-- 搜索条件 -->
+  <view>
+    <view>
+      <i-button type="primary" bind:click="toaddEqui">添加新设备</i-button>
+    </view>
+    <i-panel title="当前展示设备:" bindtap="toggleDrawer">
+      <view style="padding: 15px;">
+        <block wx:for="{{currentQuerysTag}}" wx:key="{{index}}">
+          <i-tag
+              checkable="{{false}}"
+              name="{{index}}" 
+              color="{{item.color}}"
+              type="border"
+              style="margin-right:5px;">
+              {{item.value}}
+          </i-tag>
+        </block>
+      </view>
+    </i-panel>
+  </view>
+  <block wx:for="{{equipmentList}}" wx:for-index="index" wx:for-item="item">
+    <i-swipeout  i-class="i-swipeout-item" operateWidth="{{180}}" unclosable="{{true}}" toggle="{{true}}">
+      <view slot="content" class="i-swipeout-content">
+        <view class="i-swipeout-image">
+          <i-avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" size="large"></i-avatar>
+        </view>
+        <view class="i-swipeout-des">
+          <view class="i-swipeout-des-title">{{item.eq_name}}</view>
+          <view class="i-swipeout-des-status">
+            <i-tag class="i-tags" type="border" color="red">{{item.eq_user||'待使用'}}</i-tag>
+          </view>
+          <view class="i-swipeout-des-detail">使用者: {{item.eq_user||'--'}}</view>
+          <view class="i-swipeout-des-detail">借出时间: {{item.eq_date||'--'}}</view>
+        </view>
+      </view>
+      <view slot="button" class="i-swipeout-demo-button-group">
+          <view class="i-swipeout-demo-button" data-id='{{item._id}}' bindtap="editor"><i-icon size="28" type="editor" />编辑</view>
+          <view class="i-swipeout-demo-button" bindtap="delete"><i-icon size="28" type="delete" />删除</view>
+      </view>
+    </i-swipeout>
+  </block>
+  <!-- 左侧抽屉 -->
+  <i-drawer mode="left" visible="{{showLeftDrawer}}" mask-closable="{{false}}" bind:close="changeQuery">
+      <view class="demo-container">
+        <!-- 筛选条件 -->
+        <i-panel title="选择设备类型">
+            <i-checkbox-group current="{{currentQuerys.type}}" bindchange="queryTypeChange">
+                <i-checkbox wx:for="{{equipmentType}}" position="{{left}}" wx:key="{{item.index}}" value="{{item.value}}">
+                </i-checkbox>
+            </i-checkbox-group>
+        </i-panel>
+        <i-button bind:click="toggleDrawer" type="primary">确认筛选</i-button>
+    </view>
+  </i-drawer>
+</view>

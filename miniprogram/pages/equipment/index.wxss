@@ -1,0 +1,55 @@
+/* miniprogram/pages/equipment/index.wxss */
+/* 展示面板样式 */
+.i-swipeout-item{
+  width: 100%;
+}
+.i-swipeout-content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.i-swipeout-image{
+  /* display: inline-block; */
+}
+.i-swipeout-des{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 40rpx;
+}
+.i-swipeout-des-title{
+  width: 80%;
+}
+.i-swipeout-des-status{
+  width: 20%;
+}
+.i-swipeout-des-detail{
+  text-align: left;
+  width: 100%;
+  color:#80848f;
+}
+.i-swipeout-demo-button-group{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.i-swipeout-demo-button{
+  height: 100%;
+  flex: 1;
+  background-color: #2d8cf0;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  /* border-right: 1rpx solid #dcdcdc; */
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/*  抽屉样式 */
+.demo-container{
+  width: 60vw;
+  height: 100vh;
+  background-color: #fff;
+}

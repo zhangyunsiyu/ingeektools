@@ -1,0 +1,28 @@
+<i-panel title="编辑设备详情">
+    <view>
+      <i-input value="{{ eq_name }}" title="设备名称" placeholder="设备名" bind:change="updatename"/>
+      <i-input value="{{ eq_user }}" title="使用人" placeholder="名字" bind:change="updateuser"/>
+      <view>
+        <i-panel title="选择设备类型">
+          <i-radio-group current="{{eq_type}}" bindchange="typeChange">
+              <i-radio wx:for="{{equipmentType}}" position="{{left}}" wx:key="{{item.index}}" value="{{item.value}}">
+              </i-radio>
+          </i-radio-group>
+        </i-panel>
+      </view>
+      <!-- 日期选择器 -->
+      <view class="section">
+        <view class="section__title">选择日期</view>
+        <picker
+          mode="date"
+          value="{{date}}"
+          bindchange="bindDateChange"
+        >
+          <view class="picker">当前选择: {{eq_date}}</view>
+        </picker>
+      </view>
+    </view>
+</i-panel>
+<view>
+  <i-button bind:click="addEq" type="primary">确认修改</i-button>
+</view>

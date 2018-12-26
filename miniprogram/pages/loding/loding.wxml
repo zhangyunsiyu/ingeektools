@@ -1,0 +1,10 @@
+<view class="container">
+  <view>
+    <text></text>
+  </view>
+  <view class="loding">
+    <i-spin></i-spin>
+    <i-spin></i-spin>
+    <i-spin></i-spin>
+  </view>  
+</view>
