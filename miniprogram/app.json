@@ -1,10 +1,9 @@
 {
   "pages": [
     "pages/equipment/index",
-    
+    "pages/userindex/userindex",
     "pages/equipment/edit",
     "pages/equipment/add",
-    "pages/loding/loding",
     "pages/index/index",
     "pages/addUsers/addUsers",
     "pages/register/register"

@@ -1,7 +1,7 @@
 <i-panel title="填写设备详情">
     <view>
-      <i-input value="{{ eq_name }}" title="设备名称" placeholder="设备名" bind:change="updatename"/>
-      <i-input value="{{ eq_user }}" title="使用人" placeholder="名字" bind:change="updateuser"/>
+      <i-input value="{{eq_name}}" title="设备名称" placeholder="设备名" bind:change="updatename"/>
+      <i-input value="{{eq_user}}" title="使用人" placeholder="名字" bind:change="updateuser"/>
       <view>
         <i-panel title="选择设备类型">
           <i-radio-group current="{{eq_type}}" bindchange="typeChange">
@@ -26,3 +26,5 @@
 <view>
   <i-button bind:click="addEq" type="primary">确认添加</i-button>
 </view>
+<!-- 全局消息提示 -->
+<i-message id="message" />

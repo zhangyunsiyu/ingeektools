@@ -1,0 +1,19 @@
+<!-- index索引选择器 -->
+<view class="i-index-demo">
+  <i-index height="100%" bind:change="onChange">
+      <i-index-item 
+          wx:for="{{userList}}" 
+          wx:for-index="index"
+          wx:key="{{index}}"
+          wx:for-item="item" name="{{item.key}}">
+          <view
+              class="i-index-item"
+              wx:for="{{item.list}}" 
+              wx:for-index="in" 
+              wx:key="{{in}}"
+              wx:for-item="it" data-id="{{it.id}}" data-name="{{it.name}}" bindtap='click'>
+              {{it.name}}
+          </view>
+      </i-index-item>
+  </i-index>
+</view>

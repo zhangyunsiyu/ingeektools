@@ -1,9 +1,0 @@
-.container{
-  height: 100%;
-  text-align: center;
-  padding: 100rpx 0;
-}
-.loding{
-  display: flex;
-  justify-content: center;
-}

@@ -15,6 +15,7 @@
     "i-checkbox": "../../dist/checkbox/index",
     "i-radio-group": "../../dist/radio-group/index",
     "i-radio": "../../dist/radio/index",
-    "i-button": "../../dist/button/index"
+    "i-button": "../../dist/button/index",
+    "i-message": "../../dist/message/index"
   }
 }

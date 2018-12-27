@@ -10,16 +10,15 @@ exports.main = async (event, context) => {
   const db = cloud.database() // 获取数据库
   const _ = db.command // 获取查询指令
   const equipmentCollection = db.collection('equipment') // 获取equipment集合
-  // 查询条件
-  let query = _.eq(event.id)
-  // 
-  const equipment = (await equipmentCollection.where({
-    _id: query
-  }).get())
+  
+  try{
+    await equipmentCollection.doc(event.id).remove()
+  } catch(e){
+    console.error(e)
+  }
 
   return {
     event,
-    data: equipment,
     openid: wxContext.OPENID,
     appid: wxContext.APPID,
     unionid: wxContext.UNIONID,

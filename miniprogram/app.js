@@ -27,6 +27,11 @@ App({
         }
       }
     })
-    this.globalData = {}
+    this.globalData = {
+      currentQuerys: {
+        type: ['iphone', 'android', 'ble'],
+        user: []
+      }
+    }
   }
 })

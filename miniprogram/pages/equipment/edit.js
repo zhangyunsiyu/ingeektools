@@ -1,14 +1,16 @@
 // miniprogram/pages/equipment/add.js
+const { $Message } = require('../../dist/base/index');
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
+    id: '',
     eq_name: '',
     eq_user: '',
     eq_type: '',
     eq_date: '',
+    eq_status: null,
     // 当前设备类型列表
     equipmentType: [
       {
@@ -30,24 +32,42 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   this.setData({
-     id: options.id
-   })
-   // 查询当前id的数据
-   
+    this.setData({
+      id: options.id
+    })
+    // 查询当前设备的数据
+    const _this = this
+    console.log('获取当前设备详情')
+    wx.cloud.callFunction({
+      name: 'getEquipment',
+      data: {
+        id: _this.data.id
+      },
+    }).then(res => {
+      console.log(res.result.data.data)
+      let data = res.result.data.data[0]
+      _this.setData({
+        eq_name: data.eq_name,
+        eq_user: data.eq_user,
+        eq_type: data.eq_type,
+        eq_date: data.eq_date,
+      })
+    }).catch(console.error)
   },
 
   // 绑定名称
   updatename(e) {
+    let value = e.detail.detail.value
     this.setData({
-      eq_name: e.value
+      eq_name: value
     })
   },
 
   // 绑定用户名
   updateuser(e) {
+    let value = e.detail.detail.value
     this.setData({
-      eq_user: e.value
+      eq_user: value
     })
   },
 
@@ -64,23 +84,42 @@ Page({
       eq_date: e.detail.value
     })
   },
-  addEq() {
+
+  // 提交编辑
+  editEq() {
+    // 重置设备状态
+    if (this.data.eq_user.trim() != '') {
+      // 改变eq_status
+      this.setData({
+        eq_status: 1
+      })
+    } else {
+      this.setData({
+        eq_status: 0
+      })
+    }
     let list = {
       eq_name: this.data.eq_name,
       eq_user: this.data.eq_user,
       eq_type: this.data.eq_type,
       eq_date: this.data.eq_date,
+      eq_status: this.data.eq_status
     }
     const _this = this
-    console.log('新增数据')
+    console.log('编辑数据')
     wx.cloud.callFunction({
       name: 'editEquipment',
       data: {
+        id: _this.data.id,
         data: list
       },
     }).then(res => {
-      console.log(res.result)
-      wx.navigateTo({
+      console.log(res)
+      $Message({
+        content: '编辑设备成功',
+        type: 'success'
+      })
+      wx.redirectTo({
         url: './index',
       })
     }).catch(console.error)

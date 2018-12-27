@@ -9,43 +9,30 @@ exports.main = async (event, context) => {
   // 调用数据库获取所有设备列表
   const db = cloud.database() // 获取数据库
   const _ = db.command // 获取查询指令
-  const equipmentCollection = db.collection('equipment') // 获取equipment集合
+  const usersCollection = db.collection('users') // 获取users集合
 
   // 取所有集合中符合条件的数据(因为有默认 limit 100 条的限制,需要做特殊操作)
   const MAX_LIMIT = 100
   // 先取出集合记录总数
-  const countResult = await equipmentCollection.count()
+  const countResult = await usersCollection.count()
   const total = countResult.total
   // 计算需分几次取
   const batchTimes = Math.ceil(total / 100)
   // 承载所有读操作的 promise 的数组
   const tasks = []
-  let query = {}
-  // 封装设备类型查询条件(直接通过reduce直接拼接方法)
-  query.eq_type = event.queryList['type'].reduce((acc, cur) => {
-    if (!acc) {
-      return _.eq(cur)
-    } else {
-      return acc.or(_.eq(cur))
-    }
-  }, null)
-  // 用户名查询条件
-  if (event.queryList['user'].length>0) {
-    query.eq_user = event.queryList['user'][0]
-  }
   for (let i = 0; i < batchTimes; i++) {
-    const promise = equipmentCollection.where(query).skip(i * MAX_LIMIT).limit(MAX_LIMIT).get()
+    const promise = usersCollection.skip(i * MAX_LIMIT).limit(MAX_LIMIT).get()
     tasks.push(promise)
   }
   // 等待所有数据读取完成
-  const equipmentList = (await Promise.all(tasks)).reduce((acc, cur) => ({
+  const usersList = (await Promise.all(tasks)).reduce((acc, cur) => ({
     data: acc.data.concat(cur.data),
     errMsg: acc.errMsg,
   }))
 
   return {
     event,
-    data: equipmentList,
+    data: usersList,
     openid: wxContext.OPENID,
     appid: wxContext.APPID,
     unionid: wxContext.UNIONID,
