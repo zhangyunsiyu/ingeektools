@@ -28,6 +28,8 @@ App({
       }
     })
     this.globalData = {
+      userRole: '',
+      userindex: '', // 编辑和添加页面,index索引选择的值
       currentQuerys: {
         type: ['iphone', 'android', 'ble'],
         user: []

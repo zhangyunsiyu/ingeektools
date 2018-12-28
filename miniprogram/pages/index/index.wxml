@@ -1,2 +1,26 @@
-<!--miniprogram/pages/index/index.wxml-->
-<text>miniprogram/pages/index/index.wxml</text>
+<view class='content'>
+  <view class='title'>请输入4位访问密码</view>
+  <view class='password'>{{password}}</view>
+  <view class='bottom'>
+    <i-grid>
+    <i-grid-item bindtap='click' data-num="1"><i-grid-label >1</i-grid-label></i-grid-item>
+    <i-grid-item bindtap="click" data-num="2"><i-grid-label >2</i-grid-label></i-grid-item>
+    <i-grid-item bindtap="click" data-num="3"><i-grid-label >3</i-grid-label></i-grid-item>
+  </i-grid>
+  <i-grid>
+    <i-grid-item bindtap="click" data-num="4"><i-grid-label >4</i-grid-label></i-grid-item>
+    <i-grid-item bindtap="click" data-num="5"><i-grid-label >5</i-grid-label></i-grid-item>
+    <i-grid-item bindtap="click" data-num="6"><i-grid-label >6</i-grid-label></i-grid-item>
+  </i-grid>
+  <i-grid>
+    <i-grid-item bindtap="click" data-num="7"><i-grid-label >7</i-grid-label></i-grid-item>
+    <i-grid-item bindtap="click" data-num="8"><i-grid-label >8</i-grid-label></i-grid-item>
+    <i-grid-item bindtap="click" data-num="9"><i-grid-label >9</i-grid-label></i-grid-item>
+  </i-grid>
+  <i-grid>
+    <i-grid-item bindtap="click" data-num="reset"><i-grid-label >重置</i-grid-label></i-grid-item>
+    <i-grid-item bindtap="click" data-num="0"><i-grid-label >0</i-grid-label></i-grid-item>
+    <i-grid-item bindtap="click" data-num="del"><i-grid-label >删除</i-grid-label></i-grid-item>
+  </i-grid>
+  </view>
+</view>

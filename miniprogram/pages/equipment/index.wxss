@@ -20,6 +20,7 @@
 }
 .i-swipeout-des-title{
   width: 80%;
+  overflow: hidden;
 }
 .i-swipeout-des-status{
   width: 20%;

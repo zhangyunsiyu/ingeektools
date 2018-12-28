@@ -1,8 +1,8 @@
 <!-- index索引选择器 -->
-<view class="i-index-demo">
+<view class="i-index">
   <i-index height="100%" bind:change="onChange">
-      <i-index-item 
-          wx:for="{{userList}}" 
+      <i-index-item
+          wx:for="{{userList}}"
           wx:for-index="index"
           wx:key="{{index}}"
           wx:for-item="item" name="{{item.key}}">

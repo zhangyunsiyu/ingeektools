@@ -3,7 +3,7 @@
   <!-- 搜索条件 -->
   <view>
     <view>
-      <i-button type="primary" bind:click="toaddEqui">添加新设备</i-button>
+      <i-button type="primary" wx:if="{{userRole == 'admin'}}" bind:click="toaddEqui">添加新设备</i-button>
     </view>
     <i-panel title="当前展示设备:" bindtap="toggleDrawer">
       <view style="padding: 15px;">
@@ -31,14 +31,15 @@
           <view class="i-swipeout-des">
             <view class="i-swipeout-des-title">{{item.eq_name}}</view>
             <view class="i-swipeout-des-status">
-              <i-tag class="i-tags" wx:if="{{item.eq_status == 0}}" type="border" color="green">闲置</i-tag>
+              <i-tag class="i-tags" wx:if="{{item.eq_status == 0 || !item.eq_status}}" type="border" color="green">闲置</i-tag>
               <i-tag class="i-tags" wx:if="{{item.eq_status == 1}}" type="border" color="red">使用中</i-tag>
             </view>
+            <i-tag class="i-tags" wx:if="{{item.eq_no}}" type="border" color="#495060">{{item.eq_no}}</i-tag>
             <view class="i-swipeout-des-detail">使用者: {{item.eq_user||'--'}}</view>
             <view class="i-swipeout-des-detail">借出时间: {{item.eq_date||'--'}}</view>
           </view>
         </view>
-        <view slot="button" class="i-swipeout-demo-button-group">
+        <view slot="button" class="i-swipeout-demo-button-group" wx:if="{{userRole == 'admin'}}">
             <view class="i-swipeout-demo-button" data-id='{{item._id}}' bindtap="editor"><i-icon size="28" type="editor" />编辑</view>
             <view class="i-swipeout-demo-button" data-id='{{item._id}}' bindtap="openDeleteEqAction"><i-icon size="28" type="delete" />删除</view>
         </view>
@@ -58,7 +59,12 @@
             </i-checkbox-group>
         </i-panel>
         <i-panel title="使用人">
-            <i-cell title="{{currentQuerys.user[0]?currentQuerys.user[0]:'请选择使用人'}}" is-link url="../userindex/userindex" bind:click="openIndex"></i-cell>
+            <i-cell title="{{currentQuerys.user[0]?currentQuerys.user[0]:'选择使用人'}}" only-tap-footer="{{true}}">
+              <i-icon slot="icon" type="delete_fill" wx:if="{{currentQuerys.user[0]}}" size='20' color='#dcdcdc' bindtap='clearQueryUser'></i-icon>
+              <navigator slot='footer' open-type='navigate' hover-class="none" url='../userindex/userindex?fromPath=index'>
+                <i-icon type='enter' size='20' color='#dcdcdc'></i-icon>
+              </navigator>
+            </i-cell>
         </i-panel>
         <i-button bind:click="toggleDrawer" type="primary">确认筛选</i-button>
     </view>

@@ -1,7 +1,14 @@
 <i-panel title="编辑设备详情">
     <view>
-      <i-input value="{{ eq_name }}" title="设备名称" placeholder="设备名" bind:change="updatename"/>
-      <i-input value="{{ eq_user }}" title="使用人" placeholder="名字" bind:change="updateuser"/>
+      <i-input value="{{eq_name}}" title="设备名称" placeholder="设备名" bind:change="updatename"/>
+      <i-input value="{{eq_no}}" title="设备编号" placeholder="设备编号" bind:change="updateno"/>
+      <i-cell title="{{eq_user?eq_user:'选择使用人'}}" only-tap-footer="{{true}}">
+        <i-icon slot="icon" type="delete_fill" wx:if="{{eq_user}}" size='20' color='#dcdcdc' bindtap='clearUser'></i-icon>
+        <view slot='footer' open-type='navigate' hover-class="none" bindtap='toUserIndex'>
+          <i-icon type='enter' size='20' color='#dcdcdc'></i-icon>
+        </view>
+      </i-cell>
+      <!-- <i-input value="{{eq_user}}" title="使用人" placeholder="名字" disabled='{{true}}' bindtap='toUserIndex'/> -->
       <view>
         <i-panel title="选择设备类型">
           <i-radio-group current="{{eq_type}}" bindchange="typeChange">

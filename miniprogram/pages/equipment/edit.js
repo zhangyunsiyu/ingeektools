@@ -1,5 +1,6 @@
 // miniprogram/pages/equipment/add.js
 const { $Message } = require('../../dist/base/index');
+const app = getApp()
 Page({
   /**
    * 页面的初始数据
@@ -7,6 +8,7 @@ Page({
   data: {
     id: '',
     eq_name: '',
+    eq_no: '',
     eq_user: '',
     eq_type: '',
     eq_date: '',
@@ -47,12 +49,25 @@ Page({
       console.log(res.result.data.data)
       let data = res.result.data.data[0]
       _this.setData({
-        eq_name: data.eq_name,
-        eq_user: data.eq_user,
-        eq_type: data.eq_type,
-        eq_date: data.eq_date,
+        eq_name: data.eq_name || '',
+        eq_no: data.eq_no || '',
+        eq_user: data.eq_user || '',
+        eq_type: data.eq_type || '',
+        eq_date: data.eq_date || '',
       })
     }).catch(console.error)
+  },
+
+  onShow: function () {
+    if (app.globalData.userindex != '') {
+      this.setData({
+        eq_user: app.globalData.userindex
+      })
+      app.globalData.userindex = ''
+    }
+  },
+  onHide: function () {
+    app.globalData.userindex = ''
   },
 
   // 绑定名称
@@ -63,11 +78,34 @@ Page({
     })
   },
 
-  // 绑定用户名
-  updateuser(e) {
+  // 绑定编号
+  updateno(e) {
     let value = e.detail.detail.value
     this.setData({
-      eq_user: value
+      eq_no: value
+    })
+  },
+
+  // 清除已经选择的使用者筛选条件
+  clearUser() {
+    this.data.eq_user = ''
+    this.setData({
+      eq_user: this.data.eq_user
+    })
+  },
+
+  // 绑定用户名
+  // updateuser(e) {
+  //   let value = e.detail.detail.value
+  //   this.setData({
+  //     eq_user: value
+  //   })
+  // },
+
+  // 跳转到选择用户页面
+  toUserIndex() {
+    wx.navigateTo({
+      url: "../userindex/userindex?fromPath=edit",
     })
   },
 
@@ -95,11 +133,13 @@ Page({
       })
     } else {
       this.setData({
-        eq_status: 0
+        eq_status: 0,
+        eq_date: ''
       })
     }
     let list = {
       eq_name: this.data.eq_name,
+      eq_no: this.data.eq_no,
       eq_user: this.data.eq_user,
       eq_type: this.data.eq_type,
       eq_date: this.data.eq_date,
@@ -119,7 +159,7 @@ Page({
         content: '编辑设备成功',
         type: 'success'
       })
-      wx.redirectTo({
+      wx.reLaunch({
         url: './index',
       })
     }).catch(console.error)

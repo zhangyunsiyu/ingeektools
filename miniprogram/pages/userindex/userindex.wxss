@@ -1,6 +1,9 @@
+.i-index{
+  height: 100vh;
+}
 .i-index-item{
-  height: 100rpx;
-  line-height: 100rpx;
+  height: 80rpx;
+  line-height: 80rpx;
   border-bottom: 1rpx solid #dcdcdc;
   padding: 0 20rpx;
 }

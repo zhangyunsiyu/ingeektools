@@ -42,8 +42,10 @@ Page({
 
   onLoad: function (options) {
     this.setData({
-      showspin: true
+      showspin: true,
+      userRole: app.globalData.userRole
     })
+    // 此时currentQuerys与app.globalData.currentQuerys映射的是同一地址,此后数据的改变都会影响到app里面的全局数据
     this.setData({
       currentQuerys: app.globalData.currentQuerys
     })
@@ -91,11 +93,22 @@ Page({
 
   // 点击选择设备类型
   queryTypeChange({ detail = {} }) {
+    console.log(app.globalData)
     const index = this.data.currentQuerys.type.indexOf(detail.value);
     index === -1 ? this.data.currentQuerys.type.push(detail.value) : this.data.currentQuerys.type.splice(index, 1);
     this.setData({
       currentQuerys: this.data.currentQuerys
     })
+    console.log(app.globalData)
+  },
+
+  // 清除已经选择的使用者筛选条件
+  clearQueryUser () {
+    this.data.currentQuerys.user = []
+    this.setData({
+      currentQuerys: this.data.currentQuerys
+    })
+    console.log(app.globalData)
   },
 
   // 更新筛选tags(tags的更新只跟currentQuerys有关)

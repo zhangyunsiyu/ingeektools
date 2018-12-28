@@ -2,17 +2,34 @@ import { chineseToPinYin } from '../../assets/js/chineseToPinyin.js'
 const app = getApp()
 Page({
   data: {
-    userList: []
+    userList: [],
+    fromPath: ''
   },
   onChange(event) {
     console.log(event.detail, 'click right menu callback data')
   },
   click(e) {
     // 选中的用户名抛到全局
-    app.globalData.currentQuerys.user[0] = e.currentTarget.dataset.name
+    switch (this.data.fromPath) {
+      case 'index':
+        app.globalData.currentQuerys.user[0] = e.currentTarget.dataset.name
+        break;
+      case 'edit':
+        app.globalData.userindex = e.currentTarget.dataset.name
+        break
+      case 'add':
+        app.globalData.userindex = e.currentTarget.dataset.name
+        break
+      default:
+    }
     wx.navigateBack({})
   },
-  onLoad () {
+  onLoad (option) {
+    this.setData({
+      fromPath: option.fromPath
+    })
+  },
+  onReady() {
     const _this = this
     console.log('获取用户列表')
     wx.cloud.callFunction({
@@ -21,10 +38,6 @@ Page({
       console.log(res.result.data.data)
       _this.init(res.result.data.data)
     }).catch(console.error)
-
-  },
-  onReady() {
-    
   },
   // 初始化
   init (userList) {

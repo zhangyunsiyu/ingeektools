@@ -11,10 +11,10 @@ exports.main = async (event, context) => {
   const _ = db.command // 获取查询指令
   const equipmentCollection = db.collection('equipment') // 获取equipment集合
   // 查询条件
-  let query = _.eq(event.id)
+  // let query = _.eq(event.id)
   // 
   const equipment = (await equipmentCollection.where({
-    _id: query
+    _id: event.id
   }).get())
 
   return {

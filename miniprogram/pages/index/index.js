@@ -1,11 +1,12 @@
 // miniprogram/pages/index/index.js
+const app = getApp()
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-
+    password: '',
+    passwordList: []
   },
 
   /**
@@ -14,53 +15,26 @@ Page({
   onLoad: function (options) {
 
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  click (e) {
+    let num = e.currentTarget.dataset.num
+    if (num == 'reset') {
+      this.data.passwordList = []
+    } else if (num == 'del') {
+      this.data.passwordList.pop()
+    } else {
+      this.data.passwordList.push(num)
+    }
+    this.data.password = this.data.passwordList.reduce((acc, cur)=>{
+      return acc + '' + cur
+    },'')
+    this.setData({
+      password: this.data.password
+    })
+    if (this.data.password == '1234'|| this.data.password == '2019') {
+      app.globalData.userRole = this.data.password == '1234' ? 'normal' : 'admin'
+      wx.redirectTo({
+        url: '../equipment/index',
+      })
+    }
   }
 })

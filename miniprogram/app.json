@@ -1,10 +1,10 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/equipment/index",
     "pages/userindex/userindex",
     "pages/equipment/edit",
     "pages/equipment/add",
-    "pages/index/index",
     "pages/addUsers/addUsers",
     "pages/register/register"
   ],
