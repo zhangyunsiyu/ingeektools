@@ -194,4 +194,11 @@ Page({
     }).catch(console.error)
   },
 
+  // 底部导航
+  tabChange({ detail }) {
+    wx.redirectTo({
+      url: `../${detail.key}/index`,
+    })
+  }
+
 })

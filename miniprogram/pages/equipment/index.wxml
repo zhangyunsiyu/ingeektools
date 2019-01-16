@@ -21,7 +21,7 @@
     </i-panel>
   </view>
   <!-- 列表 -->
-  <view style='position:relative;min-height:50vh;'>
+  <view style='position:relative;min-height:50vh;margin-bottom:100rpx;'>
     <block wx:for="{{equipmentList}}" wx:for-index="index" wx:for-item="item" wx:key="index">
       <i-swipeout  i-class="i-swipeout-item" operateWidth="{{180}}" unclosable="{{true}}" toggle="{{false}}">
         <view slot="content" class="i-swipeout-content">
@@ -85,3 +85,8 @@
     </view>
   </i-action-sheet>
 </view>
+<i-tab-bar current="{{'equipment'}}" bindchange="tabChange" fixed="{{true}}">
+    <i-tab-bar-item key="equipment" icon="computer" current-icon="computer_fill" title="设备"></i-tab-bar-item>
+    <i-tab-bar-item key="checkingin" icon="createtask" current-icon="createtask_fill" title="考勤"></i-tab-bar-item>
+    <i-tab-bar-item key="mine" icon="mine" current-icon="mine_fill"  title="我的"></i-tab-bar-item>
+</i-tab-bar>

@@ -1,0 +1,5 @@
+/* miniprogram/pages/redirect/redirect.wxss */
+.progress-item{
+  height: calc(100vh - 800rpx);
+  padding: 400rpx 40rpx;
+}

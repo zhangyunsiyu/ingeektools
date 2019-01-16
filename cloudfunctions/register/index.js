@@ -10,14 +10,22 @@ exports.main = async (event, context) => {
   const db = cloud.database() // 获取数据库
   const _ = db.command // 获取查询指令
   const usersCollection = db.collection('users') // 获取users集合
-
-  const user = (await usersCollection.where({
-    open_id: wxContext.OPENID
-  }).get())
+  // 查询条件
+  let query = _.eq(event.id)
+  // 
+  try {
+    await usersCollection.doc(event.id).update({
+      // data 传入需要局部更新的数据
+      data: {
+        open_id: wxContext.OPENID
+      }
+    })
+  } catch (e) {
+    console.log(e)
+  }
 
   return {
     event,
-    data: user,
     openid: wxContext.OPENID,
     appid: wxContext.APPID,
     unionid: wxContext.UNIONID,

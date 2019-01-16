@@ -28,12 +28,15 @@ App({
       }
     })
     this.globalData = {
-      userRole: '',
-      userindex: '', // 编辑和添加页面,index索引选择的值
+      userInfo: {}, // 微信用户信息
+      userRole: '', // 当前用户角色
+      registerUser: {}, // 微信用户绑定的用户信息
+      userindex: '', // 编辑设备和添加设备页面,index索引选择的值name
+      userindexId: '',// 编辑设备和添加设备页面,index索引选择的值id
       currentQuerys: {
         type: ['iphone', 'android', 'ble'],
         user: []
-      }
+      } // 设备管理筛选框筛选的结果
     }
   }
 })

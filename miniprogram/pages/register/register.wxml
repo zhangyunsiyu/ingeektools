@@ -1,0 +1,34 @@
+<view style='padding: 100rpx 10rpx;'>
+  <i-steps current="{{current}}">
+    <i-step>
+        <view slot="title">
+              微信授权
+        </view>
+        <view slot="content">
+            同意微信授权信息
+        </view>
+    </i-step>
+    <i-step>
+        <view slot="title">
+            绑定用户
+        </view>
+        <view wx:if="{{!userindex}}" slot="content">
+            选择该微信需要绑定的用户名
+        </view>
+        <view wx:if="{{userindex}}" slot="content">
+            选择用户名为: {{userindex}}
+        </view>
+    </i-step>
+    <i-step>
+        <view slot="title">
+            注册完成
+        </view>
+        <view slot="content">
+            点击下一步使用系统
+        </view>
+    </i-step>
+</i-steps>
+<i-button wx:if="{{current === 0}}" open-type="getUserInfo" bind:getuserinfo="getuserInfo">点击授权</i-button>
+<i-button wx:if="{{current === 1}}" bindclick="toUserIndex">点击绑定</i-button>
+<i-button wx:if="{{current === 2}}" bindclick="handleClick">下一步</i-button>
+</view>

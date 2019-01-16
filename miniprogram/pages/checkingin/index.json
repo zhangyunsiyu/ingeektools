@@ -1,9 +1,9 @@
 {
   "usingComponents": {
-    "i-swipeout": "../../dist/swipeout/index", 
-    "i-drawer": "../../dist/drawer/index", 
-    "i-action-sheet": "../../dist/action-sheet/index", 
-    "i-card": "../../dist/card/index", 
+    "i-swipeout": "../../dist/swipeout/index",
+    "i-drawer": "../../dist/drawer/index",
+    "i-action-sheet": "../../dist/action-sheet/index",
+    "i-card": "../../dist/card/index",
     "i-avatar": "../../dist/avatar/index",
     "i-icon": "../../dist/icon/index",
     "i-tag": "../../dist/tag/index",

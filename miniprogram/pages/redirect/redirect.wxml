@@ -1,0 +1,3 @@
+<view class="progress-item">
+    <i-progress percent="{{ percent }}" status="{{ status }}" stroke-width="{{20}}" hide-info="{{true}}"></i-progress>
+</view>

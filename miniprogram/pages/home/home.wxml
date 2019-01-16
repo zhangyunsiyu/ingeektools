@@ -1,0 +1,11 @@
+<view>
+  <view class='top'>
+    <i-card title="{{userInfo.nickName}}" extra="" thumb="{{userInfo.avatarUrl}}">
+        <!-- <view slot="content">{{userInfo.nickName}}</view> -->
+        <!-- <view slot="footer">{{}}</view> -->
+    </i-card>
+  </view>
+  <view class='content'>
+    
+  </view>
+</view>

@@ -1,66 +1,72 @@
 // miniprogram/pages/register/register.js
+const { $Message } = require('../../dist/base/index');
+const app = getApp()
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    current: 0,
+    isBindUser: false,
+    userindex: '',
+    userindexId: ''
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
-
+    const _this = this
+    if (app.globalData.userindex || app.globalData.userindexId) {
+      _this.setData({
+        userindex: app.globalData.userindex,
+        userindexId: app.globalData.userindexId
+      })
+      // 调取绑定接口
+      wx.cloud.callFunction({
+        name: 'register',
+        data: {
+          id: _this.data.userindexId
+        },
+      }).then(res => {
+        console.log(res)
+        _this.setData({
+          current: 2
+        })
+        _this.login()
+      }).catch(console.error)
+      app.globalData.userindex = ''
+      app.globalData.userindexId = ''
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  login () {
+    wx.cloud.callFunction({
+      name: 'login',
+    }).then(res => {
+      console.log(res.result)
+      if (res.result.data.data.length > 0) {
+        app.globalData.registerUser = res.result.data.data[0]
+      }
+    }).catch(console.error)
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  getuserInfo(e) {
+    // 获取用户信息并提交到全局函数
+    app.globalData.userInfo = e.detail.userInfo
+    if (app.globalData.userInfo) {
+      this.setData({
+        'current': 1
+      })
+    }
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
+  toUserIndex () {
+    wx.navigateTo({
+      url: "../userindex/userindex?fromPath=register",
+    })
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  handleClick() {
+    const addCurrent = this.data.current + 1;
+    const current = addCurrent
+    this.setData({
+      'current': current
+    })
+    if (this.data.current > 2) {
+      // 跳转到home页面
+      wx.redirectTo({
+        url: '../equipment/index',
+      })
+    }
   }
 })

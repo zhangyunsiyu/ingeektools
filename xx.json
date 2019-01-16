@@ -1,0 +1,451 @@
+
+  {
+    "name": "程潇",
+    "total_overtime": "24",
+    "rested_overtime": "0",
+    "residue_overtime": "24",
+    "rested_annualleave": "48",
+    "residue_annualleave": "72",
+    "total_sickleave": "0",
+    "total_casualleave": "0"
+  }
+  {
+    "name": "薛青",
+    "total_overtime": "0",
+    "rested_overtime": "0",
+    "residue_overtime": "0",
+    "rested_annualleave": "43",
+    "residue_annualleave": "37",
+    "total_sickleave": "4",
+    "total_casualleave": "0"
+  }
+  {
+    "name": "周游",
+    "total_overtime": "94.5",
+    "rested_overtime": "18",
+    "residue_overtime": "76.5",
+    "rested_annualleave": "6",
+    "residue_annualleave": "50",
+    "total_sickleave": "0",
+    "total_casualleave": "0"
+  }
+  {
+    "name": "代晨旭",
+    "total_overtime": "201",
+    "rested_overtime": "44",
+    "residue_overtime": "157",
+    "rested_annualleave": "8",
+    "residue_annualleave": "32",
+    "total_sickleave": "0",
+    "total_casualleave": "0"
+  }
+  {
+    "name": "赵广兵",
+    "total_overtime": "127",
+    "rested_overtime": "8",
+    "residue_overtime": "119",
+    "rested_annualleave": "0",
+    "residue_annualleave": "",
+    "total_sickleave": "0",
+    "total_casualleave": "0"
+  }
+  {
+    "name": "尚勇杰",
+    "total_overtime": "204.5",
+    "rested_overtime": "74.5",
+    "residue_overtime": "130",
+    "rested_annualleave": "0",
+    "residue_annualleave": "",
+    "total_sickleave": "0",
+    "total_casualleave": "0"
+  }
+  {
+    "name": "涂苏海",
+    "total_overtime": "144",
+    "rested_overtime": "8",
+    "residue_overtime": "136",
+    "rested_annualleave": "0",
+    "residue_annualleave": "",
+    "total_sickleave": "0",
+    "total_casualleave": "0"
+  }
+  {
+    "name": "郭丽敏",
+    "total_overtime": "47",
+    "rested_overtime": "8",
+    "residue_overtime": "39",
+    "rested_annualleave": "0",
+    "residue_annualleave": "",
+    "total_sickleave": "8",
+    "total_casualleave": "0"
+  }
+  {
+    "name": "张赟",
+    "total_overtime": "40.5",
+    "rested_overtime": "30",
+    "residue_overtime": "10.5",
+    "rested_annualleave": "0",
+    "residue_annualleave": "",
+    "total_sickleave": "0",
+    "total_casualleave": "0"
+  }
+  {
+    "name": "胡超",
+    "total_overtime": "99.5",
+    "rested_overtime": "98",
+    "residue_overtime": "1.5",
+    "rested_annualleave": "0",
+    "residue_annualleave": "",
+    "total_sickleave": "48",
+    "total_casualleave": "0"
+  }
+  {
+    "name": "齐男男",
+    "total_overtime": "179.5",
+    "rested_overtime": "84",
+    "residue_overtime": "95.5",
+    "rested_annualleave": "8",
+    "residue_annualleave": "24",
+    "total_sickleave": "0",
+    "total_casualleave": "0"
+  }
+  {
+    "name": "张磊",
+    "total_overtime": "93.5",
+    "rested_overtime": "44.5",
+    "residue_overtime": "49",
+    "rested_annualleave": "0",
+    "residue_annualleave": "",
+    "total_sickleave": "0",
+    "total_casualleave": "0"
+  }
+  {
+    "name": "余亚娟",
+    "total_overtime": "111.5",
+    "rested_overtime": "19",
+    "residue_overtime": "92.5",
+    "rested_annualleave": "0",
+    "residue_annualleave": "",
+    "total_sickleave": "0",
+    "total_casualleave": "8"
+  }
+  {
+    "name": "牛少国",
+    "total_overtime": "201",
+    "rested_overtime": "111",
+    "residue_overtime": "90",
+    "rested_annualleave": "0",
+    "residue_annualleave": "",
+    "total_sickleave": "0",
+    "total_casualleave": "0"
+  }
+  {
+    "name": "吴茂盛",
+    "total_overtime": "77",
+    "rested_overtime": "71.5",
+    "residue_overtime": "5.5",
+    "rested_annualleave": "0",
+    "residue_annualleave": "",
+    "total_sickleave": "8",
+    "total_casualleave": "0"
+  }
+  {
+    "name": "蒋东辉",
+    "total_overtime": "16",
+    "rested_overtime": "8",
+    "residue_overtime": "8",
+    "rested_annualleave": "0",
+    "residue_annualleave": "",
+    "total_sickleave": "0",
+    "total_casualleave": "0"
+  }
+  {
+    "name": "张伟",
+    "total_overtime": "5",
+    "rested_overtime": "5",
+    "residue_overtime": "0",
+    "rested_annualleave": "14",
+    "residue_annualleave": "26",
+    "total_sickleave": "0",
+    "total_casualleave": "0"
+  }
+  {
+    "name": "邓璟珩（离职）",
+    "total_overtime": "8",
+    "rested_overtime": "0",
+    "residue_overtime": "8",
+    "rested_annualleave": "40",
+    "residue_annualleave": "0",
+    "total_sickleave": "0",
+    "total_casualleave": "16"
+  }
+  {
+    "name": "张勐",
+    "total_overtime": "94",
+    "rested_overtime": "86",
+    "residue_overtime": "8",
+    "rested_annualleave": "26",
+    "residue_annualleave": "70",
+    "total_sickleave": "0",
+    "total_casualleave": "0"
+  }
+  {
+    "name": "吕晓建",
+    "total_overtime": "4",
+    "rested_overtime": "0",
+    "residue_overtime": "4",
+    "rested_annualleave": "72",
+    "residue_annualleave": "48",
+    "total_sickleave": "0",
+    "total_casualleave": "0"
+  }
+  {
+    "name": "王振驰（离职）",
+    "total_overtime": "36",
+    "rested_overtime": "24",
+    "residue_overtime": "12",
+    "rested_annualleave": "0",
+    "residue_annualleave": "",
+    "total_sickleave": "0",
+    "total_casualleave": "0"
+  }
+  {
+    "name": "袁骁",
+    "total_overtime": "116.5",
+    "rested_overtime": "40.5",
+    "residue_overtime": "76",
+    "rested_annualleave": "49",
+    "residue_annualleave": "7",
+    "total_sickleave": "0",
+    "total_casualleave": "0"
+  }
+  {
+    "name": "韩萃颖",
+    "total_overtime": "8",
+    "rested_overtime": "8",
+    "residue_overtime": "0",
+    "rested_annualleave": "3",
+    "residue_annualleave": "37",
+    "total_sickleave": "24",
+    "total_casualleave": "0"
+  }
+  {
+    "name": "翁晓芸",
+    "total_overtime": "49",
+    "rested_overtime": "24",
+    "residue_overtime": "25",
+    "rested_annualleave": "32",
+    "residue_annualleave": "0",
+    "total_sickleave": "0",
+    "total_casualleave": "0"
+  }
+  {
+    "name": "黄庭轩",
+    "total_overtime": "31",
+    "rested_overtime": "8",
+    "residue_overtime": "23",
+    "rested_annualleave": "0",
+    "residue_annualleave": "",
+    "total_sickleave": "0",
+    "total_casualleave": "0"
+  }
+  {
+    "name": "黄清星",
+    "total_overtime": "55.5",
+    "rested_overtime": "0",
+    "residue_overtime": "55.5",
+    "rested_annualleave": "16",
+    "residue_annualleave": "8",
+    "total_sickleave": "24",
+    "total_casualleave": "8"
+  }
+  {
+    "name": "张晓迪",
+    "total_overtime": "83",
+    "rested_overtime": "16",
+    "residue_overtime": "67",
+    "rested_annualleave": "3",
+    "residue_annualleave": "53",
+    "total_sickleave": "0",
+    "total_casualleave": "0"
+  }
+  {
+    "name": "赖晓岚",
+    "total_overtime": "9",
+    "rested_overtime": "8",
+    "residue_overtime": "1",
+    "rested_annualleave": "48",
+    "residue_annualleave": "8",
+    "total_sickleave": "0",
+    "total_casualleave": "10"
+  }
+  {
+    "name": "李飞",
+    "total_overtime": "28.5",
+    "rested_overtime": "0",
+    "residue_overtime": "28.5",
+    "rested_annualleave": "0",
+    "residue_annualleave": "",
+    "total_sickleave": "0",
+    "total_casualleave": "0"
+  }
+  {
+    "name": "余金喜",
+    "total_overtime": "99.5",
+    "rested_overtime": "40",
+    "residue_overtime": "59.5",
+    "rested_annualleave": "56",
+    "residue_annualleave": "0",
+    "total_sickleave": "0",
+    "total_casualleave": "0"
+  }
+  {
+    "name": "葛中琤",
+    "total_overtime": "96",
+    "rested_overtime": "60",
+    "residue_overtime": "36",
+    "rested_annualleave": "34",
+    "residue_annualleave": "6",
+    "total_sickleave": "60",
+    "total_casualleave": "0"
+  }
+  {
+    "name": "韦洪喜",
+    "total_overtime": "121.5",
+    "rested_overtime": "20",
+    "residue_overtime": "101.5",
+    "rested_annualleave": "0",
+    "residue_annualleave": "",
+    "total_sickleave": "0",
+    "total_casualleave": "0"
+  }
+  {
+    "name": "王灿",
+    "total_overtime": "138",
+    "rested_overtime": "37",
+    "residue_overtime": "101",
+    "rested_annualleave": "",
+    "residue_annualleave": "",
+    "total_sickleave": "",
+    "total_casualleave": ""
+  }
+  {
+    "name": "李士明",
+    "total_overtime": "0",
+    "rested_overtime": "0",
+    "residue_overtime": "0",
+    "rested_annualleave": "",
+    "residue_annualleave": "",
+    "total_sickleave": "",
+    "total_casualleave": ""
+  }
+  {
+    "name": "黄飘",
+    "total_overtime": "52",
+    "rested_overtime": "",
+    "residue_overtime": "",
+    "rested_annualleave": "",
+    "residue_annualleave": "",
+    "total_sickleave": "",
+    "total_casualleave": ""
+  }
+  {
+    "name": "贺文军",
+    "total_overtime": "8",
+    "rested_overtime": "",
+    "residue_overtime": "",
+    "rested_annualleave": "",
+    "residue_annualleave": "",
+    "total_sickleave": "",
+    "total_casualleave": ""
+  }
+  {
+    "name": "李振屺",
+    "total_overtime": "43",
+    "rested_overtime": "0",
+    "residue_overtime": "0",
+    "rested_annualleave": "",
+    "residue_annualleave": "",
+    "total_sickleave": "",
+    "total_casualleave": ""
+  }
+  {
+    "name": "陈俊",
+    "total_overtime": "16",
+    "rested_overtime": "",
+    "residue_overtime": "",
+    "rested_annualleave": "",
+    "residue_annualleave": "",
+    "total_sickleave": "",
+    "total_casualleave": ""
+  }
+  {
+    "name": "赵峰",
+    "total_overtime": "",
+    "rested_overtime": "",
+    "residue_overtime": "",
+    "rested_annualleave": "",
+    "residue_annualleave": "",
+    "total_sickleave": "",
+    "total_casualleave": ""
+  }
+  {
+    "name": "周啸磊",
+    "total_overtime": "",
+    "rested_overtime": "",
+    "residue_overtime": "",
+    "rested_annualleave": "",
+    "residue_annualleave": "",
+    "total_sickleave": "",
+    "total_casualleave": ""
+  }
+  {
+    "name": "石春丹",
+    "total_overtime": "16",
+    "rested_overtime": "",
+    "residue_overtime": "",
+    "rested_annualleave": "",
+    "residue_annualleave": "",
+    "total_sickleave": "",
+    "total_casualleave": ""
+  }
+  {
+    "name": "黄蕴明",
+    "total_overtime": "16",
+    "rested_overtime": "",
+    "residue_overtime": "",
+    "rested_annualleave": "",
+    "residue_annualleave": "",
+    "total_sickleave": "",
+    "total_casualleave": ""
+  }
+  {
+    "name": "魏淑婷",
+    "total_overtime": "",
+    "rested_overtime": "",
+    "residue_overtime": "",
+    "rested_annualleave": "",
+    "residue_annualleave": "",
+    "total_sickleave": "",
+    "total_casualleave": ""
+  }
+  {
+    "name": "周良红",
+    "total_overtime": "",
+    "rested_overtime": "",
+    "residue_overtime": "",
+    "rested_annualleave": "",
+    "residue_annualleave": "",
+    "total_sickleave": "",
+    "total_casualleave": ""
+  }
+  {
+    "name": "赵四方",
+    "total_overtime": "8",
+    "rested_overtime": "",
+    "residue_overtime": "",
+    "rested_annualleave": "",
+    "residue_annualleave": "",
+    "total_sickleave": "",
+    "total_casualleave": ""
+  }

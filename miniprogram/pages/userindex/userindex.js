@@ -20,6 +20,9 @@ Page({
       case 'add':
         app.globalData.userindex = e.currentTarget.dataset.name
         break
+      case 'register':
+        app.globalData.userindex = e.currentTarget.dataset.name
+        app.globalData.userindexId = e.currentTarget.dataset.id
       default:
     }
     wx.navigateBack({})
